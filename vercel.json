@@ -2,17 +2,15 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/index.php": { 
-            "runtime": "vercel-php@0.6.0",
-            "excludeFiles": "{.git/**,node_modules/**}"
-        }
+        "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/dist/$1" },
+        { "src": "/build/(.*)", "dest": "/public/build/" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist",
+    "public": true,
+    "buildCommand": "vite build",
+    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
