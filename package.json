@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build && cp public/index.php api/index.php"
+        "build": "mkdir -p api && cp -r public/* api/ && vite build"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",

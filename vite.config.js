@@ -6,19 +6,21 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
+            buildDirectory: 'dist'
         }),
     ],
     build: {
         outDir: 'dist',
-        assetsDir: '',
+        emptyOutDir: true,
         manifest: true,
         rollupOptions: {
+            input: ['resources/css/app.css', 'resources/js/app.js'],
             output: {
-                manualChunks: undefined
+                manualChunks: undefined,
+                entryFileNames: `[name].[hash].js`,
+                chunkFileNames: `[name].[hash].js`,
+                assetFileNames: `[name].[hash].[ext]`
             }
-        },
-        // Tambahkan ini untuk mengatasi masalah gzip
-        reportCompressedSize: false,
-        chunkSizeWarningLimit: 1000
+        }
     }
 })
