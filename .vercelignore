@@ -1,6 +1,8 @@
 vendor
 node_modules
 .env
+.env.example
 .git
 storage
 bootstrap/cache
+tests
