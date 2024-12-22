@@ -10,13 +10,6 @@
         { "src": "/dist/(.*)", "dest": "/dist/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/static-build",
-            "config": { "zeroConfig": true }
-        }
-    ],
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
     "env": {
