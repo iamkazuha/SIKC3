@@ -1,8 +1,6 @@
-vendor
-node_modules
+/vendor
+/node_modules
 .env
-.env.example
 .git
-storage
+/storage/*.key
 bootstrap/cache
-tests
