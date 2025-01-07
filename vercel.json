@@ -6,8 +6,15 @@
         }
     },
     "routes": [
-        { "src": "/(.*)", "dest": "/api/index.php" }
+        { 
+            "src": "/dist/(.*)", 
+            "dest": "/dist/$1" 
+        },
+        { 
+            "src": "/(.*)", 
+            "dest": "/api/index.php" 
+        }
     ],
-    "buildCommand": "npm run build",
+    "buildCommand": "chmod +x vercel-build.sh && ./vercel-build.sh",
     "outputDirectory": "dist"
 }

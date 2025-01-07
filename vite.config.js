@@ -10,12 +10,15 @@ export default defineConfig({
     ],
     build: {
         outDir: 'dist',
-        emptyOutDir: true,
-        minify: false, // Disable minification temporarily
+        assetsDir: '',
+        manifest: true,
         rollupOptions: {
-            output: {
-                manualChunks: undefined
+            input: {
+                app: 'resources/js/app.js'
             }
         }
+    },
+    optimizeDeps: {
+        exclude: ['laravel-vite-plugin']
     }
 })
