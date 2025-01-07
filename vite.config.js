@@ -6,20 +6,15 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
-            buildDirectory: 'dist'
         }),
     ],
     build: {
         outDir: 'dist',
         emptyOutDir: true,
-        manifest: true,
+        minify: false, // Disable minification temporarily
         rollupOptions: {
-            input: ['resources/css/app.css', 'resources/js/app.js'],
             output: {
-                manualChunks: undefined,
-                entryFileNames: `[name].[hash].js`,
-                chunkFileNames: `[name].[hash].js`,
-                assetFileNames: `[name].[hash].[ext]`
+                manualChunks: undefined
             }
         }
     }
